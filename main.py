@@ -46,16 +46,21 @@ twitch_miner = TwitchChannelPointsMiner(
             BET_wiN=Fore.MAGENTA                # Color allowed are: [BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET].
         ),
         telegram=Telegram(                                                          # You can omit or set to None if you don't want to receive updates on Telegram
-            chat_id=12345678,                                                      # Chat ID to send messages @getmyid_bot
+            chat_id=12345678,                                                       # Chat ID to send messages @getmyid_bot
             token="",                          # Telegram API token @BotFather
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE, Events.CHAT_MENTION],                          # Only these events will be sent to the chat
+                    Events.BET_LOSE, Events.CHAT_MENTION, 
+                    Events.GAIN_BY_RAID, Events.GAIN_BY_WATCH,
+                    Events.GAIN_BY_CLAIM],                                                  # Only these events will be sent to the chat
             disable_notification=True,                                              # Revoke the notification (sound/vibration)
         ),
         discord=Discord(
             webhook_api=os.environ.get('webhook_api'),  # Discord Webhook URL
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE,]                                  # Only these events will be sent to the chat
+                    Events.BET_LOSE, Events.BET_WIN,
+                    Events.GAIN_BY_RAID, Events.GAIN_BY_WATCH,
+                    Events.GAIN_BY_CLAIM, Events.GAIN_BY_WATCH_STREAK,
+                    Events.BET_FAILED]                      # Only these events will be sent to the chat
         ),
         webhook=Webhook(
             endpoint="https://example.com/webhook",                                                                    # Webhook URL
