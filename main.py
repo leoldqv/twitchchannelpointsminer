@@ -55,7 +55,7 @@ twitch_miner = TwitchChannelPointsMiner(
         discord=Discord(
             webhook_api=os.environ.get('webhook_api'),  # Discord Webhook URL
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE,                                  # Only these events will be sent to the chat
+                    Events.BET_LOSE,]                                  # Only these events will be sent to the chat
         ),
         webhook=Webhook(
             endpoint="https://example.com/webhook",                                                                    # Webhook URL
