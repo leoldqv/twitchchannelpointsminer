@@ -2,7 +2,7 @@ FROM python:3.12
 
 ARG BUILDX_QEMU_ENV
 
-WORKDIR /usr/src/app
+#WORKDIR /usr/src/app
 
 COPY ./requirements.txt ./
 
