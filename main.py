@@ -50,8 +50,8 @@ twitch_miner = TwitchChannelPointsMiner(
             token="",                          # Telegram API token @BotFather
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
                     Events.BET_LOSE, Events.CHAT_MENTION, 
-                    Events.GAIN_BY_RAID, Events.GAIN_BY_WATCH,
-                    Events.GAIN_BY_CLAIM],                                                  # Only these events will be sent to the chat
+                    Events.GAIN_FOR_RAID, Events.GAIN_FOR_WATCH,
+                    Events.GAIN_FOR_CLAIM],                                                  # Only these events will be sent to the chat
             disable_notification=True,                                              # Revoke the notification (sound/vibration)
         ),
         discord=Discord(
